@@ -63,10 +63,15 @@ const renderCalendar = () => {
     }
   }
 
-  for (let j = 1; j <= nextDays; j++) {
-    days += `<div class="next-date">${j}</div>`;
-    monthDays.innerHTML = days;
-  }
+  if(nextDays > 0) {
+        for (let j = 1; j <= nextDays; j++) {
+            days += `<div class="next-date">${j}</div>`;
+            monthDays.innerHTML = days;
+        }
+    }
+    else {
+        monthDays.innerHTML = days;
+    }
 };
 
 document.querySelector(".prev").addEventListener("click", () => {
